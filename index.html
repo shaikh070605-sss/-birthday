@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>For Sadiya | Happy Birthday ❤️</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="aurora"></div>
+  <div id="particles"></div>
+  <div id="confetti"></div>
+
+  <!-- Music -->
+  <audio id="music" loop>
+    <source src="birthday.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="music-button" id="musicButton" onclick="toggleMusic()">
+    ♫ Music Off
+  </button>
+
+  <main>
+
+    <!-- SCREEN 1: WELCOME -->
+
+    <section class="screen active" id="welcome">
+
+      <div class="top-sparkles">✦ ✧ ✨ ✧ ✦</div>
+
+      <p class="small-heading">A LITTLE SURPRISE FOR SOMEONE SPECIAL</p>
+
+      <h1 class="main-heading">
+        Hey <span>Sadiya</span>!
+      </h1>
+
+      <p class="description">
+        I've made something special just for you.
+        Are you ready to see it?
+      </p>
+
+      <div class="gift-scene" onclick="openGift()">
+
+        <div class="glow-circle"></div>
+
+        <div class="gift-3d" id="gift">
+
+          <div class="gift-body">
+            <div class="gift-stripe"></div>
+          </div>
+
+          <div class="gift-lid" id="giftLid">
+            <div class="lid-stripe"></div>
+          </div>
+
+          <div class="gift-bow">🎀</div>
+
+        </div>
+
+        <div class="gift-shadow"></div>
+
+      </div>
+
+      <p class="tap-text">Tap the gift to open your surprise 💝</p>
+
+      <button class="primary-button" onclick="openGift()">
+        Open Your Gift ✨
+      </button>
+
+    </section>
+
+
+    <!-- SCREEN 2: BIRTHDAY -->
+
+    <section class="screen" id="birthday">
+
+      <div class="birthday-content">
+
+        <div class="crown">👑</div>
+
+        <p class="small-heading">TODAY IS ALL ABOUT YOU</p>
+
+        <h1 class="birthday-title">
+          Happy Birthday
+        </h1>
+
+        <h2 class="birthday-name">Sadiya ❤️</h2>
+
+        <p class="description">
+          A beautiful day for a beautiful soul.
+        </p>
+
+        <!-- Birthday cake -->
+
+        <div class="cake-scene">
+
+          <div class="cake-glow"></div>
+
+          <div class="cake">
+
+            <div class="candles">
+
+              <div class="candle">
+                <div class="flame"></div>
+              </div>
+
+              <div class="candle">
+                <div class="flame"></div>
+              </div>
+
+              <div class="candle">
+                <div class="flame"></div>
+              </div>
+
+            </div>
+
+            <div class="cake-top"></div>
+            <div class="cake-middle"></div>
+            <div class="cake-bottom"></div>
+            <div class="cake-plate"></div>
+
+          </div>
+
+        </div>
+
+        <p class="wish-text" id="wishText">
+          Close your eyes, make a wish and blow the candles! 🕯️
+        </p>
+
+        <button class="primary-button" id="blowButton" onclick="blowCandles()">
+          Blow the Candles 🌬️
+        </button>
+
+        <button class="secondary-button" onclick="showLetter()">
+          Open Your Special Letter 💌
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- SCREEN 3: ENVELOPE -->
+
+    <section class="screen" id="envelopeScreen">
+
+      <p class="small-heading">SOMETHING FROM MY HEART</p>
+
+      <h1 class="section-heading">A Letter For You</h1>
+
+      <p class="description">
+        There are a few things I want you to know...
+      </p>
+
+      <div class="envelope-scene" onclick="openLetter()">
+
+        <div class="envelope" id="envelope">
+
+          <div class="letter-paper" id="letterPaper">
+            <span>For Sadiya ❤️</span>
+            <p>A little message from my heart...</p>
+          </div>
+
+          <div class="envelope-back"></div>
+          <div class="envelope-front"></div>
+          <div class="envelope-flap"></div>
+
+          <div class="envelope-heart">💗</div>
+
+        </div>
+
+      </div>
+
+      <p class="tap-text">Tap the envelope to open it 💌</p>
+
+      <button class="primary-button" onclick="openLetter()">
+        Open My Letter
+      </button>
+
+    </section>
+
+
+    <!-- SCREEN 4: EMOTIONAL LETTER -->
+
+    <section class="screen" id="letterScreen">
+
+      <div class="letter-card">
+
+        <div class="letter-decoration">🌷</div>
+
+        <p class="small-heading">A MESSAGE FROM MY HEART</p>
+
+        <h1 class="letter-title">Dear Sadiya,</h1>
+
+        <div class="message-content">
+
+          <p>
+            First of all, a very Happy Birthday to you! ❤️
+          </p>
+
+          <p>
+            I just want you to know how special you are.
+            Some people enter our lives and make ordinary
+            moments feel extraordinary. You are one of those people.
+          </p>
+
+          <p>
+            Thank you for all the smiles, laughs,
+            memories and little moments that make
+            our friendship beautiful.
+          </p>
+
+          <p>
+            Life may change, days may pass and
+            we may get busy with our own journeys,
+            but I truly hope our friendship always
+            remains close to my heart.
+          </p>
+
+          <p>
+            I wish you endless happiness, success,
+            good health and everything your heart
+            truly desires.
+          </p>
+
+          <p>
+            Never doubt your worth. Keep smiling,
+            keep shining and never stop being yourself.
+          </p>
+
+        </div>
+
+        <h2 class="letter-ending">
+          You deserve all the happiness in the world! 💗
+        </h2>
+
+        <p class="signature">
+          Always wishing the best for you,
+          <br>
+          Your Best Friend ❤️
+        </p>
+
+        <button class="primary-button" onclick="showFinal()">
+          One Last Surprise ✨
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- SCREEN 5: FINAL -->
+
+    <section class="screen" id="final">
+
+      <div class="final-content">
+
+        <div class="big-heart">💖</div>
+
+        <p class="small-heading">A SPECIAL WISH FOR YOU</p>
+
+        <h1 class="final-title">
+          Stay Amazing,
+          <span>Sadiya!</span>
+        </h1>
+
+        <p class="final-message">
+          May your life always be filled with
+          beautiful moments, genuine smiles,
+          endless opportunities and people
+          who make you feel loved.
+        </p>
+
+        <div class="final-flowers">
+          🌸 🦋 💗 ✨ 🌷
+        </div>
+
+        <h2>Happy Birthday Once Again! 🎂</h2>
+
+        <p class="last-line">
+          This little surprise was made especially for you.
+        </p>
+
+        <button class="primary-button" onclick="restart()">
+          Experience Again ↻
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,118 +1,71 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="theme-color" content="#ffe5f0">
-  <meta name="description" content="A special birthday surprise made with love for Sadiya.">
 
   <title>For Sadiya | Happy Birthday ❤️</title>
 
-  <!-- Main CSS -->
   <link rel="stylesheet" href="./style.css?v=4">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Basic fallback styling -->
-  <style>
-    .screen {
-      display: none;
-    }
-
-    .screen.active {
-      display: flex;
-    }
-
-    body {
-      min-height: 100vh;
-      margin: 0;
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- Background effects -->
   <div class="aurora"></div>
   <div id="particles"></div>
   <div id="confetti"></div>
 
-  <!-- Background music -->
+  <canvas id="fireworksCanvas"></canvas>
+
   <audio id="music" loop preload="auto">
     <source src="./birthday.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- Music control -->
-  <button
-    class="music-button"
-    id="musicButton"
-    type="button"
-    onclick="toggleMusic()">
+  <button class="music-button" id="musicButton" onclick="toggleMusic()">
     ♫ Play Music
   </button>
 
   <main>
 
     <!-- SCREEN 1: WELCOME -->
-
     <section class="screen active" id="welcome">
 
-      <div class="top-sparkles">
-        ✦ ✧ ✨ ✧ ✦
-      </div>
+      <div class="top-sparkles">✦ ✧ ✨ ✧ ✦</div>
 
-      <p class="small-heading">
-        A LITTLE SURPRISE FOR SOMEONE SPECIAL
-      </p>
+      <p class="small-heading">A LITTLE SURPRISE FOR SOMEONE SPECIAL</p>
 
-      <h1 class="main-heading">
-        Hey <span>Sadiya</span>!
-      </h1>
+      <h1 class="main-heading">Hey <span>Sadiya</span>!</h1>
 
       <p class="description">
         I've made something special just for you.
         Are you ready to see it?
       </p>
 
-      <!-- 3D Gift -->
-
       <div class="gift-scene" onclick="openGift()">
-
         <div class="glow-circle"></div>
 
         <div class="gift-3d" id="gift">
-
           <div class="gift-body">
             <div class="gift-stripe"></div>
           </div>
-
           <div class="gift-lid" id="giftLid">
             <div class="lid-stripe"></div>
           </div>
-
           <div class="gift-bow">🎀</div>
-
         </div>
 
         <div class="gift-shadow"></div>
-
       </div>
 
-      <p class="tap-text">
-        Tap the gift to open your surprise 💝
-      </p>
+      <p class="tap-text">Tap the gift to open your surprise 💝</p>
 
-      <button
-        class="primary-button"
-        type="button"
-        onclick="openGift()">
+      <button class="primary-button" onclick="openGift()">
         Open Your Gift ✨
       </button>
 
@@ -120,51 +73,30 @@
 
 
     <!-- SCREEN 2: BIRTHDAY -->
-
     <section class="screen" id="birthday">
 
       <div class="birthday-content">
 
         <div class="crown">👑</div>
 
-        <p class="small-heading">
-          TODAY IS ALL ABOUT YOU
-        </p>
+        <p class="small-heading">TODAY IS ALL ABOUT YOU</p>
 
-        <h1 class="birthday-title">
-          Happy Birthday
-        </h1>
-
-        <h2 class="birthday-name">
-          Sadiya ❤️
-        </h2>
+        <h1 class="birthday-title">Happy Birthday</h1>
+        <h2 class="birthday-name">Sadiya ❤️</h2>
 
         <p class="description">
           A beautiful day for a beautiful soul.
         </p>
 
-        <!-- Birthday Cake -->
-
         <div class="cake-scene">
-
           <div class="cake-glow"></div>
 
           <div class="cake">
 
             <div class="candles">
-
-              <div class="candle">
-                <div class="flame"></div>
-              </div>
-
-              <div class="candle">
-                <div class="flame"></div>
-              </div>
-
-              <div class="candle">
-                <div class="flame"></div>
-              </div>
-
+              <div class="candle"><div class="flame"></div></div>
+              <div class="candle"><div class="flame"></div></div>
+              <div class="candle"><div class="flame"></div></div>
             </div>
 
             <div class="cake-top"></div>
@@ -173,25 +105,17 @@
             <div class="cake-plate"></div>
 
           </div>
-
         </div>
 
         <p class="wish-text" id="wishText">
           Close your eyes, make a wish and blow the candles! 🕯️
         </p>
 
-        <button
-          class="primary-button"
-          id="blowButton"
-          type="button"
-          onclick="blowCandles()">
+        <button class="primary-button" id="blowButton" onclick="blowCandles()">
           Blow the Candles 🌬️
         </button>
 
-        <button
-          class="secondary-button"
-          type="button"
-          onclick="showLetter()">
+        <button class="secondary-button" onclick="showLetter()">
           Open Your Special Letter 💌
         </button>
 
@@ -201,59 +125,36 @@
 
 
     <!-- SCREEN 3: ENVELOPE -->
-
     <section class="screen" id="envelopeScreen">
 
-      <p class="small-heading">
-        SOMETHING FROM MY HEART
-      </p>
-
-      <h1 class="section-heading">
-        A Letter For You
-      </h1>
+      <p class="small-heading">SOMETHING FROM MY HEART</p>
+      <h1 class="section-heading">A Letter For You</h1>
 
       <p class="description">
         There are a few things I want you to know...
       </p>
 
-      <!-- Animated Envelope -->
-
-      <div
-        class="envelope-scene"
-        onclick="openLetter()">
+      <div class="envelope-scene" onclick="openLetter()">
 
         <div class="envelope" id="envelope">
 
-          <div class="letter-paper" id="letterPaper">
-
+          <div class="letter-paper">
             <span>For Sadiya ❤️</span>
-
-            <p>
-              A little message from my heart...
-            </p>
-
+            <p>A little message from my heart...</p>
           </div>
 
           <div class="envelope-back"></div>
-
           <div class="envelope-front"></div>
-
           <div class="envelope-flap"></div>
-
           <div class="envelope-heart">💗</div>
 
         </div>
 
       </div>
 
-      <p class="tap-text">
-        Tap the envelope to open it 💌
-      </p>
+      <p class="tap-text">Tap the envelope to open it 💌</p>
 
-      <button
-        class="primary-button"
-        type="button"
-        onclick="openLetter()">
+      <button class="primary-button" onclick="openLetter()">
         Open My Letter
       </button>
 
@@ -261,28 +162,19 @@
 
 
     <!-- SCREEN 4: EMOTIONAL LETTER -->
-
     <section class="screen" id="letterScreen">
 
       <div class="letter-card">
 
-        <div class="letter-decoration">
-          🌷
-        </div>
+        <div class="letter-decoration">🌷</div>
 
-        <p class="small-heading">
-          A MESSAGE FROM MY HEART
-        </p>
+        <p class="small-heading">A MESSAGE FROM MY HEART</p>
 
-        <h1 class="letter-title">
-          Dear Sadiya,
-        </h1>
+        <h1 class="letter-title">Dear Sadiya,</h1>
 
         <div class="message-content">
 
-          <p>
-            First of all, a very Happy Birthday to you! ❤️
-          </p>
+          <p>First of all, a very Happy Birthday to you! ❤️</p>
 
           <p>
             I just want you to know how special you are.
@@ -321,16 +213,12 @@
         </h2>
 
         <p class="signature">
-          Always wishing the best for you,
-          <br>
+          Always wishing the best for you,<br>
           Your Best Friend ❤️
         </p>
 
-        <button
-          class="primary-button"
-          type="button"
-          onclick="showFinal()">
-          One Last Surprise ✨
+        <button class="primary-button" onclick="startQuiz()">
+          Let's Play a Little Game 🎮
         </button>
 
       </div>
@@ -338,19 +226,86 @@
     </section>
 
 
-    <!-- SCREEN 5: FINAL -->
+    <!-- SCREEN 5: FRIENDSHIP QUIZ -->
+    <section class="screen" id="quizScreen">
 
+      <div class="quiz-card">
+
+        <div class="quiz-icon">💗</div>
+
+        <p class="small-heading">A LITTLE FRIENDSHIP GAME</p>
+
+        <h1 class="section-heading">Friendship Quiz</h1>
+
+        <p class="description">
+          Let's see how well you know this friendship!
+        </p>
+
+        <div class="quiz-progress">
+          <div id="quizProgress"></div>
+        </div>
+
+        <p class="question-count" id="questionCount">
+          Question 1 of 3
+        </p>
+
+        <h2 class="quiz-question" id="quizQuestion">
+          Loading question...
+        </h2>
+
+        <div class="quiz-options" id="quizOptions"></div>
+
+        <p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p>
+
+        <button
+          class="primary-button"
+          id="nextQuestionButton"
+          onclick="nextQuestion()"
+          hidden>
+          Next Question →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- SCREEN 6: QUIZ RESULT -->
+    <section class="screen" id="quizResult">
+
+      <div class="final-content">
+
+        <div class="big-heart">🏆</div>
+
+        <p class="small-heading">OUR FRIENDSHIP MOMENT</p>
+
+        <h1 class="final-title">Amazing, Sadiya!</h1>
+
+        <h2 id="quizScore">Your score: 0/3</h2>
+
+        <p class="final-message">
+          No matter what your score is,
+          the best part is the friendship
+          and memories we share. 💗
+        </p>
+
+        <button class="primary-button" onclick="showFinal()">
+          One Last Surprise 🎁
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- SCREEN 7: FINAL -->
     <section class="screen" id="final">
 
       <div class="final-content">
 
-        <div class="big-heart">
-          💖
-        </div>
+        <div class="big-heart">💖</div>
 
-        <p class="small-heading">
-          A SPECIAL WISH FOR YOU
-        </p>
+        <p class="small-heading">A SPECIAL WISH FOR YOU</p>
 
         <h1 class="final-title">
           Stay Amazing,
@@ -364,22 +319,39 @@
           who make you feel loved.
         </p>
 
-        <div class="final-flowers">
-          🌸 🦋 💗 ✨ 🌷
-        </div>
+        <div class="final-flowers">🌸 🦋 💗 ✨ 🌷</div>
 
-        <h2>
-          Happy Birthday Once Again! 🎂
-        </h2>
+        <h2>Happy Birthday Once Again! 🎂</h2>
 
         <p class="last-line">
           This little surprise was made especially for you.
         </p>
 
-        <button
-          class="primary-button"
-          type="button"
-          onclick="restart()">
+        <button class="primary-button" id="secretButton" onclick="revealSecret()">
+          🎁 Open Your Secret Surprise
+        </button>
+
+        <div class="secret-message" id="secretMessage" hidden>
+          <div class="secret-heart">💌</div>
+
+          <h2>A Little Secret For You</h2>
+
+          <p>
+            Sadiya, you are not just a friend,
+            you are someone whose presence makes
+            ordinary days a little more beautiful.
+          </p>
+
+          <p>
+            I may not always say it, but I truly
+            value our friendship. Thank you for
+            being you. Never stop smiling! ❤️
+          </p>
+
+          <h2>Stay happy, always! 🌷</h2>
+        </div>
+
+        <button class="secondary-button" onclick="restart()">
           Experience Again ↻
         </button>
 
@@ -389,7 +361,6 @@
 
   </main>
 
-  <!-- Main JavaScript -->
   <script src="./script.js?v=4"></script>
 
 </body>
